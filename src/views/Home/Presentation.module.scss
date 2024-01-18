@@ -1,0 +1,43 @@
+.presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5%;
+    height: 100%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.presentation h1 {
+    font-size: 100px;
+    filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
+
+}
+
+.presentation p {
+    font-size: 35px;
+    margin: auto;
+    filter: drop-shadow(0px 5px 5px rgb(0, 0, 0));
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .presentation {
+        padding: 30px 5% 30px 5%;
+        text-align: center;
+    }
+
+    .presentation h1 {
+        font-size: 55px;
+        padding-bottom: 30px;
+        filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
+    }
+
+    .presentation p {
+        font-size: 25px;
+        filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
+        font-weight: 400;
+    }
+
+
+}
