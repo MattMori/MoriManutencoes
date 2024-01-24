@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@types/react-icons": "^3.0.0",
+    "axios": "^1.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-input-mask": "^2.0.4",
     "react-router-dom": "^6.21.2",
-    "sass": "^1.64.1"
+    "sass": "^1.64.1",
+    "sweetalert2": "^11.10.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

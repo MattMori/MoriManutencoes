@@ -1,11 +1,11 @@
-// No seu componente ContactForm.jsx
-
 import { useState } from 'react';
+import axios from 'axios';
 import InputMask from 'react-input-mask';
 import styles from './ContactForm.module.scss';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import ButtonA from '../../Components/ButtonA';
+import Swal from 'sweetalert2';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -13,6 +13,18 @@ const ContactForm = () => {
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
 
+  const toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
+  
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
@@ -31,13 +43,27 @@ const ContactForm = () => {
     setDescription(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Adicione lógica para lidar com o envio do formulário aqui
-    console.log('Nome:', name);
-    console.log('Telefone:', phone);
-    console.log('Email:', email);
-    console.log('Descrição:', description);
+
+    try {
+      const response = await axios.post('https://api.sheetmonkey.io/form/wfB1ETpoMFNJUwbx8qEJS', {
+        name,
+        phone,
+        email,
+        description,
+      });
+      toast.fire({
+        icon: "success",
+        title: "Solicitação enviada com sucesso!"
+      });
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+      toast.fire({
+        icon: "error",
+        title: "verifique os dados e tente novamente!"
+      });
+    }
   };
 
   return (
@@ -52,6 +78,7 @@ const ContactForm = () => {
               type="text"
               id="name"
               value={name}
+              required
               onChange={handleNameChange}
             />
           </div>
@@ -62,6 +89,7 @@ const ContactForm = () => {
               placeholder="(99) 99999-9999"
               id="phone"
               value={phone}
+              required
               onChange={handlePhoneChange}
             />
           </div>
@@ -72,6 +100,7 @@ const ContactForm = () => {
               id="email"
               value={email}
               onChange={handleEmailChange}
+              required
             />
           </div>
           <div className={styles.formGroup}>
@@ -79,7 +108,9 @@ const ContactForm = () => {
             <textarea
               id="description"
               value={description}
+              required
               onChange={handleDescriptionChange}
+              
             />
           </div>
           <ButtonA type="submit" text='Enviar' />
