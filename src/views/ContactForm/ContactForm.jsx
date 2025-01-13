@@ -57,6 +57,12 @@ const ContactForm = () => {
         icon: "success",
         title: "Solicitação enviada com sucesso!"
       });
+
+      setName('');
+      setPhone('');
+      setEmail('');
+      setDescription('');
+      
     } catch (error) {
       console.error('Erro ao enviar formulário:', error);
       toast.fire({

@@ -4,16 +4,16 @@ const Navbar=()=> {
     return(
 
     <div className={styles.navbar}>
-        <h1>Mori </h1>
+        <h1>Mori Soluções</h1>
         <ul>
             <li>
             <Link to={'/'}>Inicio</Link>
             </li>
             <li>
-            <Link to={'/servicos'}>Meus Serviços</Link>
+            <Link to={'/servicos'}>Serviços Oferecidos</Link>
             </li>
             <li>
-            <Link to={'/contactForm'}>Contato</Link>
+            <Link to={'/contactForm'}>Fale Conosco</Link>
             
             </li>
         </ul>
