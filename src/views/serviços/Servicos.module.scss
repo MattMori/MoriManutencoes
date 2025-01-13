@@ -26,10 +26,17 @@
 
 @media screen and (max-width: 745px) {
   .servicos {
-    padding: 20px 3% 20px 3%;
+    padding: 0px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+
+  }
+
+  .servicos ul {
+    padding: 25px;
+    margin: 10px;
   }
 
   .servicos li {
