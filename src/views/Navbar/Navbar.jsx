@@ -13,7 +13,7 @@ const Navbar=()=> {
             <Link to={'/servicos'}>Serviços Oferecidos</Link>
             </li>
             <li>
-            <Link to={'/contactForm'}>Fale Conosco</Link>
+            <Link to={'/contactForm'}>Contato</Link>
             
             </li>
         </ul>
