@@ -4,13 +4,13 @@ const Navbar=()=> {
     return(
 
     <div className={styles.navbar}>
-        <h1>Mori Soluções</h1>
+        <h1>Mori </h1>
         <ul>
             <li>
             <Link to={'/'}>Inicio</Link>
             </li>
             <li>
-            <Link to={'/servicos'}>Serviços Oferecidos</Link>
+            <Link to={'/servicos'}>Serviços</Link>
             </li>
             <li>
             <Link to={'/contactForm'}>Contato</Link>
