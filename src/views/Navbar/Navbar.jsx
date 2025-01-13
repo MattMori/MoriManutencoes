@@ -4,7 +4,7 @@ const Navbar=()=> {
     return(
 
     <div className={styles.navbar}>
-        <h1>Mori Service</h1>
+        <h1>Mori </h1>
         <ul>
             <li>
             <Link to={'/'}>Inicio</Link>

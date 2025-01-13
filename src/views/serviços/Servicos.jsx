@@ -19,6 +19,7 @@ function Servicos() {
                             <li>textura rolada</li>
                         </ul>
                     }
+                    link="https://exemplo.com/pintura"
                 />
 
                 <Card
@@ -32,7 +33,9 @@ function Servicos() {
                             <li>implantações</li>
                         </ul>
                     }
-                />                
+                    link="https://exemplo.com/pintura"
+                />
+
             </div>
             <Footer />
         </div>

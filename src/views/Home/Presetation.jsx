@@ -8,7 +8,7 @@ const Presentation = () => {
         <div >
             <Navbar />
             <div className={styles.presentation}>
-                <h1>Mori: Serviços Gerais</h1>
+                <h1>Mori: Soluções em Elétrica e Pintura</h1>
                 <p>
                     Bem-vindo! Sou Milton Mori, profissional com 25 anos<br />
                     de experiência nas áreas de elétrica e pintura.<br />

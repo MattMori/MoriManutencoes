@@ -1,14 +1,16 @@
-import styles from './Card.module.css'
+import ButtonA from './ButtonA';
+import styles from './Card.module.css';
 
-function Card({title,description, img}){
-
-    return(
-    <div className={styles.card}>
-             <section>
+function Card({ title, description, link }) {
+    return (
+        <div className={styles.card}>
+            <section>
                 <h3>{title}</h3>
                 <p>{description}</p>
-            </section>   
-                        
-    </div>)}
+            </section>
+            <ButtonA className={styles.ButtonB} href={link} text="Veja Fotos" />
+        </div>
+    );
+}
 
-export default Card
+export default Card;

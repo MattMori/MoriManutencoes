@@ -4,16 +4,20 @@
   color: rgb(255, 255, 255);
   flex-wrap: wrap;
   text-align: center;
-  padding: 10%;
-  height: 100%;
+  padding: 5%;
+}
+
+.servicos a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 
 .servicos ul {
   list-style: none;
   background-color: rgba(0, 0, 0, 0.637);
   border-radius: 40px;
-  padding: 10px;
-  margin: 40px;
+  padding: 32px;
+  margin: 10px;
 }
 
 .servicos li {
