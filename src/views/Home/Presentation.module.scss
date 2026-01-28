@@ -1,40 +1,38 @@
 .presentation {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 2%;
-    height: 100%;
-    color: rgb(0, 0, 0);
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 5%;
+  height: 100%;
+  color: rgb(0, 0, 0);
+  text-align: center;
 }
 
 .presentation h1 {
-    font-size: 80px;
-    filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
-    margin: 0px 0 60px 0;
+  font-size: 80px;
+  filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
+  margin: 0px 0 60px 0;
 }
 
 .presentation p {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 @media screen and (max-width: 600px) {
-    .presentation {
-        padding: 30px 5% 30px 5%;
-        text-align: center;
-    }
+  .presentation {
+    padding: 30px 5% 30px 5%;
+    text-align: center;
+  }
 
-    .presentation h1 {
-        font-size: 40px;
-        margin-bottom: 40px;
-        filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
-    }
+  .presentation h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
+  }
 
-    .presentation p {
-        font-size: 25px;
-        filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
-        font-weight: 400;
-    }
-
-
+  .presentation p {
+    font-size: 25px;
+    filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
+    font-weight: 400;
+  }
 }

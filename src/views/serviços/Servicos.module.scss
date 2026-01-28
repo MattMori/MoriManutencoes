@@ -4,7 +4,7 @@
   color: rgb(255, 255, 255);
   flex-wrap: wrap;
   text-align: center;
-  padding: 5%;
+  padding-top: 5%;
 }
 
 .servicos a {
@@ -15,10 +15,9 @@
 .servicos p {
   list-style: none;
   font-size: 25px;
-  background-color: rgba(0, 0, 0, 0.637);
+  background-color: rgba(0, 0, 0, 0.596);
   border-radius: 40px;
   padding: 10px;
-  margin: 10px;
 }
 
 
@@ -32,12 +31,9 @@
 
   }
 
-  .servicos ul {
-    padding: 25px;
+  .servicos p {
+    padding: 8px;
     margin: 10px;
   }
 
-  .servicos li {
-    font-size: 25px;
-  }
 }
