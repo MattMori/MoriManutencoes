@@ -12,17 +12,15 @@
   color: rgb(255, 255, 255);
 }
 
-.servicos ul {
+.servicos p {
   list-style: none;
+  font-size: 25px;
   background-color: rgba(0, 0, 0, 0.637);
   border-radius: 40px;
-  padding: 32px;
+  padding: 10px;
   margin: 10px;
 }
 
-.servicos li {
-  font-size: 25px;
-}
 
 @media screen and (max-width: 745px) {
   .servicos {

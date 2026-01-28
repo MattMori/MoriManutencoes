@@ -1,45 +1,41 @@
-import styles from './Servicos.module.scss'
-import Card from '../../Components/Card'
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import styles from "./Servicos.module.scss";
+import Card from "../../Components/Card";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 function Servicos() {
-    return (
-        <div>
-            <Navbar />
-            <div className={styles.servicos}>
-                <Card
-                    title='Pintura'
-                    description={
-                        <ul>
-                            <li>impermeabilização</li>
-                            <li>Massa corrida</li>
-                            <li>Parede de Cimento/marmorato</li>
-                            <li>Grafiato/granfino/granilite</li>
-                            <li>textura rolada</li>
-                        </ul>
-                    }
-                    link="https://exemplo.com/pintura"
-                />
+  return (
+    <div>
+      <Navbar />
+      <div className={styles.servicos}>
+        <Card
+          title="Pintor"
+          description={
+            <p>
+              Serviços de pintura interna e externa, preparação de superfícies,
+              aplicação de texturas e vernizes. Trabalho com materiais de
+              qualidade para um acabamento perfeito e durável.
+            </p>
+          }
+          link="https://exemplo.com/pintura"
+        />
 
-                <Card
-                    title='Eletrica'
-                    description={
-                        <ul>
-                            <li>Montagem de luminarias</li>
-                            <li>circuitos de emergencia</li>
-                            <li>Manutenções prediais</li>
-                            <li>leitura e interpretação de desenhos</li>
-                            <li>implantações</li>
-                        </ul>
-                    }
-                    link="https://exemplo.com/pintura"
-                />
-
-            </div>
-            <Footer />
-        </div>
-    )
+        <Card
+          title="Eletricista"
+          description={
+            <p>
+              Instalações, manutenções preventivas e corretivas, reparos em
+              quadros de força, tomadas, interruptores e circuitos elétricos.
+              Atendimento residencial, comercial e industrial com total
+              segurança.
+            </p>
+          }
+          link="https://exemplo.com/pintura"
+        />
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
-export default Servicos
+export default Servicos;
