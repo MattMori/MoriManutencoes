@@ -30,7 +30,7 @@ const Presentation = () => {
           </p>
 
           <div className={styles.ctaWrapper}>
-            <ButtonA link="/contactForm" text="Solicitar Orçamento Grátis" />
+            <ButtonA link="/contato" text="Solicitar Orçamento Grátis" />
           </div>
         </section>
       </main>

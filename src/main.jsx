@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <Servicos />,
   },
   {
-    path: "/contactForm",
+    path: "/contato",
     element: <ContactForm />, 
   },
 ]);
