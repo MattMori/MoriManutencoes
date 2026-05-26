@@ -10,7 +10,7 @@ const Presentation = () => {
       
       <main className={styles.mainContent}>
         <section className={styles.heroCard}>
-          <h1>Instalações Elétricas e Acabamentos de Alto Padrão</h1>
+          <h1>MoriService - Instalações Elétricas e pintura</h1>
 
           <p className={styles.lead}>
             Sou Milton Mori. Há 25 anos, transformo residências e empresas com 
