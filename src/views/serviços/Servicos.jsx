@@ -2,6 +2,7 @@ import styles from "./Servicos.module.scss";
 import Card from "../../Components/Card";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import ButtonA from "../../Components/ButtonA"; 
 
 function Servicos() {
   return (
@@ -24,7 +25,6 @@ function Servicos() {
                 Projetos executados rigorosamente dentro da norma NBR 5410 para total segurança residencial e comercial.
               </p>
             }
-            link="/contactForm" // Apontando para o seu formulário interno
           />
 
           <Card
@@ -36,7 +36,14 @@ function Servicos() {
                 tintas premium. Foco milimétrico no alinhamento visual, durabilidade e proteção contra umidade.
               </p>
             }
-            link="/contactForm"
+          />
+        </div>
+
+        {/* Inserido o link público do Drive aqui */}
+        <div className={styles.centerButtonWrapper}>
+          <ButtonA 
+            link="https://drive.google.com/drive/folders/1YHgV6lfL82HQg1VXyZE0PbnojtagIB9P?usp=sharing" 
+            text="Veja Fotos dos Projetos" 
           />
         </div>
       </main>
