@@ -43,7 +43,7 @@ function Servicos() {
         <div className={styles.centerButtonWrapper}>
           <ButtonA 
             link="https://drive.google.com/drive/folders/1YHgV6lfL82HQg1VXyZE0PbnojtagIB9P?usp=sharing" 
-            text="Veja Fotos dos Projetos" 
+            text="Veja Fotos dos meus trabalhos" 
           />
         </div>
       </main>
