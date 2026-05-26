@@ -1,69 +1,92 @@
- 
 .contactForm {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  color: rgb(0, 0, 0);
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 10% 0px 10%; 
+  box-sizing: border-box;
+}
+
+.cadastroContainer {
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  padding: 25px 25px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 550px; 
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
 
   h1 {
-    font-size: 80px;
-    filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  label {
+    font-family: "Inter", sans-serif;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333333;
   }
 
-  .formGroup {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    align-items: center;
-
-    label {
-      margin-bottom: 5px;
-      font-size: 25px;
-      font-weight: bold;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-      border-radius: 15px;
-      padding: 10px;
-      width: 400px;
-      border: 1px solid rgb(0, 0, 0);
-      background-color: rgba(255, 255, 255, 0.493);
-      font-size: 15px;
-      
-      &:focus {
-        outline: none;
-        border: 2px solid rgb(0, 0, 0);
-      }
+  input,
+  textarea {
+    width: 100%;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    color: #1a1a1a;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: #1a1a1a;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
     }
   }
+
+  textarea {
+    min-height: 120px;
+    resize: vertical; 
+  }
+}
+
+.submitWrapper {
+  align-self: center;
+  margin-top: 10px;
+  width: auto;
 }
 
 @media screen and (max-width: 600px) {
   .contactForm {
-    padding: 0px 5% 0px 5%;
-    text-align: center;
+    padding: 120px 4% 40px 4%;
+  }
+
+  .cadastroContainer {
+    padding: 35px 20px;
+    gap: 18px;
 
     h1 {
-      font-size: 50px;
-      padding-bottom: 18px;
-      filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
-    }
-
-    p {
-      font-size: 22px;
-      padding-bottom: 45px;
-    }
-
-    .formGroup {
-      input,
-      textarea {
-        width: 300px;
-      }
+      font-size: 1.8rem;
     }
   }
 }

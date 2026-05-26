@@ -1,38 +1,81 @@
-.presentation {
+.wrapper {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.6) 35%,
+      rgba(0, 0, 0, 0) 70%
+    ),
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
   justify-content: flex-start;
-  padding-top: 5%;
-  height: 100%;
-  color: rgb(0, 0, 0);
-  text-align: center;
+  padding: 0 10%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.presentation h1 {
-  font-size: 80px;
-  filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
-  margin: 0px 0 60px 0;
+.heroCard {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
 }
 
-.presentation p {
-  font-size: 35px;
+.heroCard h1 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 3rem;
+  color: #ffffff; 
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
-@media screen and (max-width: 600px) {
-  .presentation {
-    padding: 30px 5% 30px 5%;
-    text-align: center;
+.lead {
+  font-size: 1.3rem;
+  color: #f3f4f6;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.05rem;
+  color: #d1d5db; 
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ctaWrapper {
+  margin-top: 10px;
+  display: inline-block;
+  
+}
+
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.5) 60%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
   }
 
-  .presentation h1 {
-    font-size: 40px;
-    margin-bottom: 40px;
-    filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
+  .mainContent {
+    padding: 120px 6% 60px 6%;
+    align-items: flex-end;
   }
 
-  .presentation p {
-    font-size: 25px;
-    filter: drop-shadow(0px 5px 8px rgb(0, 0, 0));
-    font-weight: 400;
+  .heroCard h1 {
+    font-size: 2.2rem;
   }
 }

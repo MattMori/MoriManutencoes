@@ -2,23 +2,34 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import styles from "./Presentation.module.scss";
 import ButtonA from "../../Components/ButtonA";
+
 const Presentation = () => {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Navbar />
-      <div className={styles.presentation}>
-        <h1> M & R manutenção e instalação elétrica </h1>{" "}
-        <p>
-          Olá! Sou o Milton Mori. <br />
-          Há 25 anos, ajudo famílias e empresas a renovarem seus espaços<br /> com
-          segurança e qualidade.  <br />
-          Precisa de um serviço bem feito, sem dor de cabeça? <br /> Eu garanto
-          um trabalho impecável, seguro e, acima de tudo, limpo. <br /> Do
-          acabamento da pintura à instalação elétrica, <br />cuido da sua casa como se
-          fosse a minha.
-        </p>{" "}
-        <ButtonA link={"/contactForm"} text="Entre em contato" />
-      </div>{" "}
+      
+      <main className={styles.mainContent}>
+        <section className={styles.heroCard}>
+          <h1>Instalações Elétricas e Acabamentos de Alto Padrão</h1>
+
+          <p className={styles.lead}>
+            Sou Milton Mori. Há 25 anos, transformo residências e empresas com 
+            serviços técnicos baseados em segurança, normas rígidas e execução impecável.
+          </p>
+
+          <p className={styles.description}>
+            O segredo de uma obra sem estresse está no respeito ao seu espaço. 
+            Entrego projetos elétricos complexos e acabamentos de pintura com cronograma 
+            à risca e um diferencial inegociável: organização absoluta e ambiente limpo 
+            do início ao fim.
+          </p>
+
+          <div className={styles.ctaWrapper}>
+            <ButtonA link="/contactForm" text="Solicitar Orçamento Grátis" />
+          </div>
+        </section>
+      </main>
+      
       <Footer />
     </div>
   );

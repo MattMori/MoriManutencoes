@@ -5,34 +5,42 @@ import Footer from "../Footer/Footer";
 
 function Servicos() {
   return (
-    <div>
+    <div className={styles.pageWrapper}>
       <Navbar />
-      <div className={styles.servicos}>
-        <Card
-          title="Pintor"
-          description={
-            <p>
-              Serviços de pintura interna e externa, preparação de superfícies,
-              aplicação de texturas e vernizes. Trabalho com materiais de
-              qualidade para um acabamento perfeito e durável.
-            </p>
-          }
-          link="https://exemplo.com/pintura"
-        />
+      
+      <main className={styles.mainContent}>
+        <div className={styles.headerTitle}>
+          <span>O que fazemos</span>
+          <h2>Especialidades Técnicas</h2>
+        </div>
 
-        <Card
-          title="Eletricista"
-          description={
-            <p>
-              Instalações, manutenções preventivas e corretivas, reparos em
-              quadros de força, tomadas, interruptores e circuitos elétricos.
-              Atendimento residencial, comercial e industrial com total
-              segurança.
-            </p>
-          }
-          link="https://exemplo.com/pintura"
-        />
-      </div>
+        <div className={styles.gridServicos}>
+          <Card
+            title="Sistemas Elétricos e Infraestrutura"
+            description={
+              <p>
+                Instalações do zero, montagem e manutenção de quadros de distribuição (QGDI), 
+                redes estabilizadas, balanceamento de carga e iluminação LED personalizada. 
+                Projetos executados rigorosamente dentro da norma NBR 5410 para total segurança residencial e comercial.
+              </p>
+            }
+            link="/contactForm" // Apontando para o seu formulário interno
+          />
+
+          <Card
+            title="Pintura e Acabamento de Engenharia"
+            description={
+              <p>
+                Preparação técnica avançada de superfícies com correção de imperfeições, 
+                aplicação de massas (corrida e acrílica), texturas decorativas, vernizes e 
+                tintas premium. Foco milimétrico no alinhamento visual, durabilidade e proteção contra umidade.
+              </p>
+            }
+            link="/contactForm"
+          />
+        </div>
+      </main>
+
       <Footer />
     </div>
   );

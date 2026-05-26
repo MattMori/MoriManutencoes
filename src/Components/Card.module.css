@@ -1,33 +1,42 @@
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    }
-
-.card section{
-    filter: drop-shadow(0px 5px 5px rgb(0, 0, 0));
-    padding: 10px;
-    border-radius: 20px;
-    width: 500px;
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  align-items: center;
 }
 
-.card h3{
-    font-size: 50px;
-    color: black;
+.card section {
+  background-color: rgba(255, 255, 255, 0.94); 
+  backdrop-filter: blur(4px); 
+  padding: 40px 30px; 
+  border-radius: 16px; 
+  
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
+  
+  width: 100%; 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  box-sizing: border-box;
 }
 
-
+.card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem; 
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}
 
 @media screen and (max-width: 600px) {
-     .card section{
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        
+  .card section {
+    padding: 30px 20px;
+    border-radius: 12px;
+  }
 
-     }
-     .card h3{
-        font-size: 40px;
-     }
-     
+  .card h3 {
+    font-size: 1.5rem;
+  }
 }
