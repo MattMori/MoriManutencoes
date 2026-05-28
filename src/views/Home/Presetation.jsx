@@ -12,21 +12,22 @@ const Presentation = () => {
         <section className={styles.heroCard}>
           <h1>
             MoriService: <br />
-            Garantindo o melhor <br /> <span>serviço para </span>
-            sua casa ou empresa.
+            Engenharia e Manutenção Elétrica de Alta Performance.
           </h1>
 
           <p className={styles.lead}>
-            Sou Milton Mori. Há 25 anos, transformo residências e empresas com
-            serviços técnicos baseados em segurança, normas rígidas e execução
-            impecável.
+            Sou Milton Mori. Há 25 anos, garanto a infraestrutura e a segurança
+            de residências e empresas através de serviços elétricos de alta
+            complexidade, baseados estritamente nas normas técnicas (NR-10 e NBR
+            5410) e com execução impecável.
           </p>
 
           <p className={styles.description}>
-            O segredo de uma obra sem estresse está no respeito ao seu espaço.
-            Entrego projetos elétricos complexos e acabamentos de pintura com
-            cronograma à risca e um diferencial inegociável: organização
-            absoluta e ambiente limpo do início ao fim.
+            O segredo de uma instalação confiável está no rigor técnico. Entrego
+            projetos elétricos complexos, diagnósticos de panes, montagem de
+            painéis e automação com cronograma à risca. Meu diferencial
+            inegociável: diagnóstico preciso, conformidade de segurança e zero
+            dor de cabeça do início ao fim.
           </p>
 
           <div className={styles.ctaWrapper}>

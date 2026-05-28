@@ -1,14 +1,12 @@
-import styles from './Footer.module.scss'
+import styles from "./Footer.module.scss";
 //import { FaInstagram, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
-function Footer(){
-    return(
-        
-        <div className={styles.footer}> 
-            <p>Mateus Mori © 2024</p>
-        </div>
+function Footer() {
+  return (
+    <div className={styles.footer}>
+      <p>MoriService © 2026</p>
+    </div>
+  );
+}
 
- )}
-
-
-export default Footer
+export default Footer;

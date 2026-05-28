@@ -17,29 +17,52 @@ function Servicos() {
 
         <div className={styles.gridServicos}>
           <Card
-            title="Sistemas Elétricos e Infraestrutura"
+            title="Instalações, Climatização e Reformas"
             description={
               <p>
-                Instalações do zero, montagem e manutenção de quadros de distribuição (QGDI), 
-                redes estabilizadas, balanceamento de carga e iluminação LED personalizada. 
-                Projetos executados rigorosamente dentro da norma NBR 5410 para total segurança residencial e comercial.
+                Soluções completas para sua casa ou comércio. Realizamos instalações do zero e 
+                manutenções gerais como troca de fiação, tomadas e disjuntores. Inclui a instalação 
+                técnica de ar-condicionado para garantir eficiência térmica, além de projetos de iluminação 
+                (LED, lustres) e montagem de ventiladores de teto.
               </p>
             }
           />
 
           <Card
-            title="Pintura e Acabamento de Engenharia"
+            title="Poste Padrão CPFL e Aterramento"
             description={
               <p>
-                Preparação técnica avançada de superfícies com correção de imperfeições, 
-                aplicação de massas (corrida e acrílica), texturas decorativas, vernizes e 
-                tintas premium. Foco milimétrico no alinhamento visual, durabilidade e proteção contra umidade.
+                Infraestrutura de entrada segura e homologada. Executamos a instalação completa de poste padrão 
+                de energia de acordo com as normas estritas da CPFL (residencial, comercial ou coletivo). 
+                Construímos sistemas de aterramento em anel para proteção absoluta de equipamentos eletroeletrônicos 
+                contra surtos e descargas atmosféricas.
+              </p>
+            }
+          />
+
+          <Card
+            title="Painéis e Comandos Elétricos"
+            description={
+              <p>
+                Soluções especializadas para o comércio, condomínios e indústrias. Projeto, montagem e manutenção 
+                de quadros de distribuição (QGDI) e painéis de comando elétrico. Proteção avançada para motores, 
+                bombas de água e maquinários elétricos, garantindo a continuidade da sua operação com total garantia.
+              </p>
+            }
+          />
+
+          <Card
+            title="Diagnóstico de Panes e Preventiva"
+            description={
+              <p>
+                Manutenção inteligente com foco na economia e segurança. Através de testes de termografia 
+                (uso de câmeras térmicas), detectamos pontos quentes ocultos e componentes desgastados antes que 
+                eles quebrem. Ideal para evitar panes graves e identificar fugas de corrente que aumentam a conta.
               </p>
             }
           />
         </div>
 
-        {/* Inserido o link público do Drive aqui */}
         <div className={styles.centerButtonWrapper}>
           <ButtonA 
             link="https://drive.google.com/drive/folders/1YHgV6lfL82HQg1VXyZE0PbnojtagIB9P?usp=sharing" 

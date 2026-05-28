@@ -37,22 +37,22 @@ const ContactForm = () => {
       // 1. Salva no banco/planilha via SheetMonkey
       await axios.post(
         "https://api.sheetmonkey.io/form/wfB1ETpoMFNJUwbx8qEJS",
-        { name, phone, email, description }
+        { name, phone, email, description },
       );
-      
+
       toast.fire({
         icon: "success",
         title: "Dados salvos! Redirecionando para o WhatsApp...",
       });
 
       // 2. Configuração do disparo para o WhatsApp do Milton
-      const whatsappDoMilton = "5519986107539"; 
+      const whatsappDoMilton = "5519986107539";
       const textoMensagem = encodeURIComponent(
         `🚨 *Nova Solicitação de Orçamento - Site*\n\n` +
-        `👤 *Nome:* ${name}\n` +
-        `📞 *Telefone:* ${phone}\n` +
-        `✉️ *E-mail:* ${email}\n\n` +
-        `📝 *Descrição do Serviço:* ${description}`
+          `👤 *Nome:* ${name}\n` +
+          `📞 *Telefone:* ${phone}\n` +
+          `✉️ *E-mail:* ${email}\n\n` +
+          `📝 *Descrição do Serviço:* ${description}`,
       );
 
       const urlWhatsapp = `https://api.whatsapp.com/send?phone=${whatsappDoMilton}&text=${textoMensagem}`;
@@ -63,7 +63,6 @@ const ContactForm = () => {
       setDescription("");
 
       window.open(urlWhatsapp, "_blank");
-
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
       toast.fire({
@@ -76,11 +75,11 @@ const ContactForm = () => {
   return (
     <div>
       <Navbar />
-      
+
       <main className={styles.contactForm}>
         <form onSubmit={handleSubmit} className={styles.cadastroContainer}>
           <h1>Solicitar Orçamento</h1>
-          
+
           <div className={styles.formGroup}>
             <label htmlFor="name">Nome Completo</label>
             <input
@@ -124,7 +123,7 @@ const ContactForm = () => {
               value={description}
               required
               onChange={handleDescriptionChange}
-              placeholder="Descreva brevemente o que você precisa (ex: troca de fiação, pintura de fachada...)"
+              placeholder="Descreva brevemente o que você precisa (ex: modernização de painel, diagnóstico de sobrecarga, instalação de ar-condicionado...)"
             />
           </div>
 
