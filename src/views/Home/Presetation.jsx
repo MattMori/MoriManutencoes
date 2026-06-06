@@ -14,9 +14,7 @@ const Presentation = () => {
             MoriService • Campinas e Região
           </span>
 
-          <h1>
-            Engenharia elétrica com precisão, segurança e execução impecável.
-          </h1>
+          <h1>Serviço elétrico seguro para residências e empresas.</h1>
 
           <p className={styles.lead}>
             Sou Milton Mori. Há 25 anos, garanto a infraestrutura elétrica de
