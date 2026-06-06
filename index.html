@@ -2,25 +2,59 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/public/eletrica.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-18191638120"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-18191638120");
+    </script>
+
+    <link rel="icon" type="image/png" href="/eletrica.png" />
+
     <title>Moriservice | Eletricista Profissional em Campinas</title>
+
     <meta
       name="description"
       content="Serviços especializados de elétrica residencial e empresarial em Campinas e região. Serviços de alto padrão e preço justo. Faça seu orçamento!"
     />
+
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://moriservice.com" />
+    <link rel="canonical" href="https://moriservice.com/" />
 
-    <meta property="og:url" content="https://moriservice.com" />
-    <meta property="og:image" content="https://moriservice.com/inicio.png" />
-
-    <meta property="twitter:url" content="https://moriservice.com" />
+    <meta property="og:type" content="website" />
     <meta
-      property="twitter:image"
-      content="https://moriservice.com/inicio.png"
+      property="og:title"
+      content="Moriservice | Eletricista Profissional em Campinas"
     />
+    <meta
+      property="og:description"
+      content="Serviços especializados de elétrica residencial e empresarial em Campinas e região. Serviços de alto padrão e preço justo. Faça seu orçamento!"
+    />
+    <meta property="og:url" content="https://moriservice.com/" />
+    <meta property="og:image" content="https://moriservice.com/inicio.png" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Moriservice | Eletricista Profissional em Campinas"
+    />
+    <meta
+      name="twitter:description"
+      content="Serviços especializados de elétrica residencial e empresarial em Campinas e região. Serviços de alto padrão e preço justo. Faça seu orçamento!"
+    />
+    <meta name="twitter:url" content="https://moriservice.com/" />
+    <meta name="twitter:image" content="https://moriservice.com/inicio.png" />
 
     <script type="application/ld+json">
       {
@@ -28,7 +62,7 @@
         "@type": "HomeAndConstructionBusiness",
         "name": "Moriservice",
         "image": "https://moriservice.com/inicio.png",
-        "url": "https://moriservice.com",
+        "url": "https://moriservice.com/",
         "telephone": "+5519988896428",
         "priceRange": "$$",
         "address": {
@@ -41,15 +75,31 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": "-22.9542",
-          "longitude": "-47.1354"
+          "latitude": -22.9542,
+          "longitude": -47.1354
         },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Campinas"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Região Metropolitana de Campinas"
+          }
+        ],
         "knowsAbout": [
-          "Instalações elétricas"
+          "Instalações elétricas",
+          "Manutenção elétrica residencial",
+          "Manutenção elétrica empresarial",
+          "Quadros elétricos",
+          "Infraestrutura elétrica",
+          "Automação elétrica"
         ]
       }
     </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
