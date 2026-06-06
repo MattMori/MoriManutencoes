@@ -1,92 +1,202 @@
-.contactForm {
+.pageWrapper {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  background: #050914;
+}
+
+.contactForm {
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
   align-items: center;
-  padding: 100px 10% 0px 10%; 
+  justify-content: center;
+  padding: 135px 32px 70px;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/src/img/Background.jpg");
+    background-size: cover;
+    background-position: center right;
+    opacity: 0.13;
+    z-index: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at top left,
+        rgba(255, 204, 0, 0.13),
+        transparent 34%
+      ),
+      linear-gradient(135deg, rgba(3, 7, 18, 0.96), rgba(15, 23, 42, 0.92));
+    z-index: 1;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .cadastroContainer {
-  background-color: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(4px);
-  padding: 25px 25px;
-  border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 550px; 
+  width: min(100%, 540px);
+  padding: 38px;
+  box-sizing: border-box;
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(248, 250, 252, 0.96)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  box-sizing: border-box;
+  gap: 18px;
+  animation: formReveal 0.7s ease both;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 4px;
+
+  span {
+    display: inline-flex;
+    padding: 8px 14px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: rgba(255, 204, 0, 0.16);
+    border: 1px solid rgba(255, 204, 0, 0.34);
+    color: #8a5b00;
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+  }
 
   h1 {
+    margin: 0 0 12px;
+    color: #0f172a;
     font-family: "Montserrat", sans-serif;
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #1a1a1a;
-    margin: 0 0 10px 0;
+    font-size: clamp(2rem, 4vw, 2.65rem);
+    line-height: 1;
+    font-weight: 900;
     text-align: center;
+    letter-spacing: -1.4px;
+  }
+
+  p {
+    max-width: 430px;
+    margin: 0 auto;
+    color: #475569;
+    font-family: "Inter", sans-serif;
+    font-size: 0.94rem;
+    line-height: 1.55;
   }
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
+  gap: 8px;
 
   label {
+    color: #1e293b;
     font-family: "Inter", sans-serif;
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #333333;
+    font-size: 0.9rem;
+    font-weight: 900;
   }
 
   input,
   textarea {
     width: 100%;
-    padding: 12px 16px;
+    padding: 14px 16px;
     box-sizing: border-box;
-    border-radius: 8px;
-    border: 1px solid #cccccc;
-    background-color: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #0f172a;
     font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: #1a1a1a;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    
+    font-size: 0.98rem;
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+
+    &::placeholder {
+      color: #94a3b8;
+    }
+
     &:focus {
-      outline: none;
-      border-color: #1a1a1a;
-      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+      border-color: #ffcc00;
+      box-shadow:
+        0 0 0 4px rgba(255, 204, 0, 0.16),
+        0 12px 26px rgba(255, 204, 0, 0.08);
+      transform: translateY(-1px);
     }
   }
 
   textarea {
-    min-height: 120px;
-    resize: vertical; 
+    min-height: 112px;
+    resize: vertical;
   }
 }
 
 .submitWrapper {
-  align-self: center;
-  margin-top: 10px;
-  width: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+@keyframes formReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media screen and (max-width: 600px) {
   .contactForm {
-    padding: 120px 4% 40px 4%;
+    align-items: flex-start;
+    padding: 122px 16px 44px;
   }
 
   .cadastroContainer {
-    padding: 35px 20px;
-    gap: 18px;
+    padding: 26px 20px;
+    border-radius: 22px;
+    gap: 16px;
+  }
 
+  .formHeader {
     h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
+      letter-spacing: -1px;
     }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .submitWrapper {
+    width: 100%;
   }
 }

@@ -1,129 +1,106 @@
 import { useState } from "react";
-import axios from "axios";
-import InputMask from "react-input-mask";
-import styles from "./ContactForm.module.scss";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import ButtonA from "../../Components/ButtonA";
-import Swal from "sweetalert2";
+import styles from "./ContactForm.module.scss";
 
-const ContactForm = () => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [description, setDescription] = useState("");
-
-  const toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.onmouseenter = Swal.stopTimer;
-      toast.onmouseleave = Swal.resumeTimer;
-    },
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    nome: "",
+    telefone: "",
+    email: "",
+    descricao: "",
   });
 
-  const handleNameChange = (e) => setName(e.target.value);
-  const handlePhoneChange = (e) => setPhone(e.target.value);
-  const handleEmailChange = (e) => setEmail(e.target.value);
-  const handleDescriptionChange = (e) => setDescription(e.target.value);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    setFormData((currentData) => ({
+      ...currentData,
+      [name]: value,
+    }));
+  };
 
-    try {
-      // 1. Salva no banco/planilha via SheetMonkey
-      await axios.post(
-        "https://api.sheetmonkey.io/form/wfB1ETpoMFNJUwbx8qEJS",
-        { name, phone, email, description },
-      );
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-      toast.fire({
-        icon: "success",
-        title: "Dados salvos! Redirecionando para o WhatsApp...",
-      });
+    const mensagem = `Olá, Milton! Vim pelo site da MoriService e gostaria de solicitar um orçamento.
 
-      // 2. Configuração do disparo para o WhatsApp do Milton
-      const whatsappDoMilton = "5519986107539";
-      const textoMensagem = encodeURIComponent(
-        `🚨 *Nova Solicitação de Orçamento - Site*\n\n` +
-          `👤 *Nome:* ${name}\n` +
-          `📞 *Telefone:* ${phone}\n` +
-          `✉️ *E-mail:* ${email}\n\n` +
-          `📝 *Descrição do Serviço:* ${description}`,
-      );
+Nome: ${formData.nome}
+Telefone: ${formData.telefone}
+E-mail: ${formData.email}
+Descrição do serviço: ${formData.descricao}`;
 
-      const urlWhatsapp = `https://api.whatsapp.com/send?phone=${whatsappDoMilton}&text=${textoMensagem}`;
+    const whatsappUrl = `https://wa.me/5519988896428?text=${encodeURIComponent(
+      mensagem,
+    )}`;
 
-      setName("");
-      setPhone("");
-      setEmail("");
-      setDescription("");
-
-      window.open(urlWhatsapp, "_blank");
-    } catch (error) {
-      console.error("Erro ao enviar formulário:", error);
-      toast.fire({
-        icon: "error",
-        title: "Verifique os dados e tente novamente!",
-      });
-    }
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <div>
+    <div className={styles.pageWrapper}>
       <Navbar />
 
       <main className={styles.contactForm}>
-        <form onSubmit={handleSubmit} className={styles.cadastroContainer}>
-          <h1>Solicitar Orçamento</h1>
+        <form className={styles.cadastroContainer} onSubmit={handleSubmit}>
+          <div className={styles.formHeader}>
+            <span>Atendimento técnico</span>
+            <h1>Solicitar Orçamento</h1>
+            <p>
+              Envie os dados principais e uma breve descrição do serviço. O
+              contato será feito pelo WhatsApp para agilizar o atendimento.
+            </p>
+          </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="name">Nome Completo</label>
+            <label htmlFor="nome">Nome completo</label>
             <input
+              id="nome"
+              name="nome"
               type="text"
-              id="name"
-              value={name}
-              required
-              onChange={handleNameChange}
               placeholder="Digite seu nome"
-            />
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="phone">Número de Telefone</label>
-            <InputMask
-              mask="(99) 99999-9999"
-              placeholder="(19) 99999-9999"
-              id="phone"
-              value={phone}
+              value={formData.nome}
+              onChange={handleChange}
               required
-              onChange={handlePhoneChange}
             />
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="email">E-mail Corporativo ou Pessoal</label>
+            <label htmlFor="telefone">Número de telefone</label>
             <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={handleEmailChange}
+              id="telefone"
+              name="telefone"
+              type="tel"
+              placeholder="(19) 99999-9999"
+              value={formData.telefone}
+              onChange={handleChange}
               required
-              placeholder="exemplo@email.com"
             />
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="description">Descrição do Serviço</label>
-            <textarea
-              id="description"
-              value={description}
+            <label htmlFor="email">E-mail corporativo ou pessoal</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="exemplo@email.com"
+              value={formData.email}
+              onChange={handleChange}
               required
-              onChange={handleDescriptionChange}
-              placeholder="Descreva brevemente o que você precisa (ex: modernização de painel, diagnóstico de sobrecarga, instalação de ar-condicionado...)"
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="descricao">Descrição do serviço</label>
+            <textarea
+              id="descricao"
+              name="descricao"
+              placeholder="Descreva brevemente o que você precisa. Ex: modernização de painel, diagnóstico de sobrecarga, instalação de ar-condicionado..."
+              value={formData.descricao}
+              onChange={handleChange}
+              required
             />
           </div>
 
@@ -136,6 +113,6 @@ const ContactForm = () => {
       <Footer />
     </div>
   );
-};
+}
 
 export default ContactForm;

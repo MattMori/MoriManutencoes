@@ -1,20 +1,44 @@
 import styles from "./Navbar.module.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
-    <div className={styles.navbar}>
-      <ul>
-        <li>
-          <Link to={"/"}>Inicio</Link>
-        </li>
-        <li>
-          <Link to={"/servicos"}>Serviços</Link>
-        </li>
-        <li>
-          <Link to={"/contato"}>Contato</Link>
-        </li>
-      </ul>
-    </div>
+    <header className={styles.navbar}>
+      <NavLink to="/" className={styles.brand}>
+        <span>Mori</span>Service
+      </NavLink>
+
+      <nav>
+        <ul>
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Início
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/servicos"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Serviços
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/contato"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Contato
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 };
 

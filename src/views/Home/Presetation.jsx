@@ -10,28 +10,36 @@ const Presentation = () => {
 
       <main className={styles.mainContent}>
         <section className={styles.heroCard}>
+          <span className={styles.eyebrow}>
+            MoriService • Campinas e Região
+          </span>
+
           <h1>
-            MoriService: <br />
-            Engenharia e Manutenção Elétrica de Alta Performance.
+            Engenharia elétrica com precisão, segurança e execução impecável.
           </h1>
 
           <p className={styles.lead}>
-            Sou Milton Mori. Há 25 anos, garanto a infraestrutura e a segurança
-            de residências e empresas através de serviços elétricos de alta
-            complexidade, baseados estritamente nas normas técnicas (NR-10 e NBR
-            5410) e com execução impecável.
+            Sou Milton Mori. Há 25 anos, garanto a infraestrutura elétrica de
+            residências, comércios e empresas com serviços técnicos de alta
+            complexidade, seguindo NR-10, NBR 5410 e padrões rigorosos de
+            segurança.
           </p>
 
           <p className={styles.description}>
-            O segredo de uma instalação confiável está no rigor técnico. Entrego
-            projetos elétricos complexos, diagnósticos de panes, montagem de
-            painéis e automação com cronograma à risca. Meu diferencial
-            inegociável: diagnóstico preciso, conformidade de segurança e zero
-            dor de cabeça do início ao fim.
+            Atuo com instalações, manutenção, diagnóstico de panes, montagem de
+            painéis, aterramento, poste padrão CPFL e automação. Do primeiro
+            contato até a entrega final, o foco é simples: resolver com técnica,
+            transparência e zero dor de cabeça.
           </p>
 
+          <div className={styles.highlights}>
+            <span>25 anos de experiência</span>
+            <span>NR-10 e NBR 5410</span>
+            <span>Diagnóstico preciso</span>
+          </div>
+
           <div className={styles.ctaWrapper}>
-            <ButtonA link="/contato" text="Solicitar Orçamento Grátis" />
+            <ButtonA link="/contato" text="Solicitar orçamento" />
           </div>
         </section>
       </main>

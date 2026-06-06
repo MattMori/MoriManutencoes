@@ -1,42 +1,146 @@
-.form{
-    color: rgb(255, 255, 255);
+.formSection {
+    width: 100%;
+    min-height: 100vh;
+    padding: 145px 6% 70px;
+    box-sizing: border-box;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at top left, rgba(255, 204, 0, 0.14), transparent 30%),
+        linear-gradient(135deg, rgba(3, 7, 18, 0.98), rgba(15, 23, 42, 0.95));
 }
 
-.form p{
-    font-size: 40px;
-    filter: drop-shadow(0px 4px 4px #000000);
+.formCard {
+    width: min(100%, 620px);
+    padding: clamp(28px, 4vw, 46px);
+    box-sizing: border-box;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow:
+        0 34px 90px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.92);
 }
 
-.form input{border: 0;
-    border-radius: 50px;
-    background: #dae0f8;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    color: #575455;
-    width: 70%;
-    padding: 15px 30px 15px 30px;
-    margin-bottom: 30px;}
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-.form button{
-        background-color: goldenrod;
-        border: none;
-        padding: 10px;
-        border-radius: 10px;
-        font-weight: bolder;
-        margin-top: 15px;
-        cursor: pointer;
-        font-size: 18px;
-    }
-   
+.header span {
+    display: inline-flex;
+    padding: 8px 14px;
+    margin-bottom: 16px;
+    border-radius: 999px;
+    background: rgba(255, 204, 0, 0.16);
+    border: 1px solid rgba(255, 204, 0, 0.34);
+    color: #8a5b00;
+    font-family: "Inter", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+}
 
-    .form  button:hover{
-        color: aliceblue;
-        background-color:#000000 ;
-        border: solid 3px gold;
-        font-size: 22px;
-        transition-duration: 0.5s;
+.header h1 {
+    margin: 0 0 14px;
+    color: #0f172a;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+.header p {
+    margin: 0 auto;
+    max-width: 480px;
+    color: #475569;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formGroup label {
+    color: #1e293b;
+    font-family: "Inter", sans-serif;
+    font-size: 0.92rem;
+    font-weight: 800;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #0f172a;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+    color: #94a3b8;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.18);
+    transform: translateY(-1px);
+}
+
+.formGroup textarea {
+    min-height: 128px;
+    resize: vertical;
+}
+
+.submitWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+@media screen and (max-width: 600px) {
+    .formSection {
+        align-items: flex-start;
+        padding: 125px 18px 48px;
     }
+
+    .formCard {
+        border-radius: 24px;
+    }
+
+    .header {
+        margin-bottom: 24px;
+    }
+
+    .header p {
+        font-size: 0.95rem;
+    }
+
+    .submitWrapper {
+        width: 100%;
+    }
+}
