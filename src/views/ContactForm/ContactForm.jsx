@@ -13,8 +13,7 @@ function ContactForm() {
   });
 
   const WHATSAPP_NUMBER = "5519988896428";
-  const GOOGLE_ADS_SEND_TO = "AW-18191638120/yTQqCNGhxLocEOi8ueJD";
-
+  const GOOGLE_ADS_SEND_TO = "AW-18191638120/uDumCMqdhLQcEOi8ueJD";
   const handleChange = (event) => {
     const { name, value } = event.target;
 
