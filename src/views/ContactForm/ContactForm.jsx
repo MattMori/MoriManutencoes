@@ -13,7 +13,7 @@ function ContactForm() {
   });
 
   const WHATSAPP_NUMBER = "5519988896428";
-  const GOOGLE_ADS_CONVERSION_ID = "AW-18191638120/yTQqCNGhxLocEOi8ueJD";
+  const GOOGLE_ADS_SEND_TO = "AW-18191638120/yTQqCNGhxLocEOi8ueJD";
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -28,27 +28,29 @@ function ContactForm() {
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
-  const registrarConversaoGoogleAds = (whatsappUrl) => {
+  const gtagReportConversion = (whatsappUrl) => {
     if (typeof window === "undefined" || typeof window.gtag !== "function") {
       abrirWhatsApp(whatsappUrl);
-      return;
+      return false;
     }
 
-    let conversaoRegistrada = false;
+    let alreadyOpened = false;
 
-    const abrirDepoisDaConversao = () => {
-      if (conversaoRegistrada) return;
+    const callback = () => {
+      if (alreadyOpened) return;
 
-      conversaoRegistrada = true;
+      alreadyOpened = true;
       abrirWhatsApp(whatsappUrl);
     };
 
     window.gtag("event", "conversion", {
-      send_to: GOOGLE_ADS_CONVERSION_ID,
-      event_callback: abrirDepoisDaConversao,
+      send_to: GOOGLE_ADS_SEND_TO,
+      event_callback: callback,
     });
 
-    setTimeout(abrirDepoisDaConversao, 800);
+    setTimeout(callback, 800);
+
+    return false;
   };
 
   const handleSubmit = (event) => {
@@ -65,7 +67,7 @@ Descrição do serviço: ${formData.descricao}`;
       mensagem,
     )}`;
 
-    registrarConversaoGoogleAds(whatsappUrl);
+    gtagReportConversion(whatsappUrl);
   };
 
   return (
