@@ -12,6 +12,9 @@ function ContactForm() {
     descricao: "",
   });
 
+  const WHATSAPP_NUMBER = "5519988896428";
+  const GOOGLE_ADS_CONVERSION_ID = "AW-18191638120/yTQqCNGhxLocEOi8ueJD";
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -21,21 +24,48 @@ function ContactForm() {
     }));
   };
 
+  const abrirWhatsApp = (whatsappUrl) => {
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const registrarConversaoGoogleAds = (whatsappUrl) => {
+    if (typeof window === "undefined" || typeof window.gtag !== "function") {
+      abrirWhatsApp(whatsappUrl);
+      return;
+    }
+
+    let conversaoRegistrada = false;
+
+    const abrirDepoisDaConversao = () => {
+      if (conversaoRegistrada) return;
+
+      conversaoRegistrada = true;
+      abrirWhatsApp(whatsappUrl);
+    };
+
+    window.gtag("event", "conversion", {
+      send_to: GOOGLE_ADS_CONVERSION_ID,
+      event_callback: abrirDepoisDaConversao,
+    });
+
+    setTimeout(abrirDepoisDaConversao, 800);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const mensagem = `Olá, Milton! Vim pelo site da MoriService e gostaria de solicitar um orçamento.
+    const mensagem = `Olá, Milton! Vim pelo site da Mori Service e gostaria de solicitar um orçamento.
 
 Nome: ${formData.nome}
 Telefone: ${formData.telefone}
 E-mail: ${formData.email}
 Descrição do serviço: ${formData.descricao}`;
 
-    const whatsappUrl = `https://wa.me/5519988896428?text=${encodeURIComponent(
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(
       mensagem,
     )}`;
 
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    registrarConversaoGoogleAds(whatsappUrl);
   };
 
   return (
